@@ -23,44 +23,42 @@ class ProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        //TESTING//
-        val visitorId = FirebaseAuth.getInstance().currentUser!!.uid
-//        val email = FirebaseAuth.getInstance().currentUser!!.email
+// !!PENDO 2.10+ METHODS!! //
+        // !!SETS VISITOR + ACCOUNT IDS!! //
+        val visitorId = FirebaseAuth.getInstance().currentUser?.uid
+        val accountId = "Test Mobile"
 
-//        val visitorData: HashMap<String, Any> = HashMap()
-//        visitorData["email"] = email
+        // !!SETS VARIABLES FOR METADATA FIELDS!! //
+        val email = FirebaseAuth.getInstance().currentUser?.email
+        val isVerified = FirebaseAuth.getInstance().currentUser?.isEmailVerified
+        val displayName = FirebaseAuth.getInstance().currentUser?.displayName
 
+        // !!SETS VISITOR METADATA VALUES!! //
+        val visitorData: HashMap<String, Any> = HashMap()
+        visitorData["email"] = email.toString()
+        visitorData["isVerified"] = isVerified.toString()
+        visitorData["displayName"]  = displayName.toString()
+
+        // !!SETS ACCOUNT METADATA VALUES!! //
+        val accountData: HashMap<String, Any> = HashMap()
+        accountData["mobileAccountData"] = "placeholder"
+
+        // !!STARTS SESSION AND PASSES DATA TO PENDO!! //
         Pendo.startSession(
-            visitorId
+            visitorId,
+            accountId,
+            visitorData,
+            accountData
         )
-        //TESTING//
+// !!PENDO 2.10+ METHODS!! //
 
-//// send Visitor Level Data
-//        val visitorId = "123"
-//        val accountId = "123"
-//
-//        val visitorData: HashMap<String, Any> = HashMap()
-//        visitorData["age"] = 27
-//        visitorData["country"] = "USA"
-//
-//// send Account Level Data
-//        val accountData: HashMap<String, Any> = HashMap()
-//        accountData["Tier"] = 1
-//        accountData["Size"] = "Enterprise"
-//
-//        Pendo.startSession(
-//            visitorId,
-//            accountId,
-//            visitorData,
-//            accountData
-//        )
-
-//PENDO METADATA//
+// !!!WARNING DEPRECATED PENDO 2.9 AND OLDER METHODS!!! //
+////PENDO METADATA//
 //        //send Firebase visitor/accountIds to Pendo
 //        val visitorId = FirebaseAuth.getInstance().currentUser!!.uid
 //        val accountId = "TestMobile"
-// DO NOT UNCOMMENT
-//        val email = FirebaseAuth.getInstance().currentUser!!.email
+//// DO NOT UNCOMMENT
+////        val email = FirebaseAuth.getInstance().currentUser!!.email
 //
 //        val pendoParams = PendoInitParams()
 //        pendoParams.visitorId = visitorId
@@ -73,8 +71,7 @@ class ProfileActivity : AppCompatActivity() {
 //        visitorData["country"] = "USA"
 //        pendoParams.visitorData = visitorData
 ////PENDO METADATA//
-
-
+// !!!WARNING DEPRECATED PENDO 2.9 AND OLDER METHODS!!! //
 
         binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)

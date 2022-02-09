@@ -43,8 +43,9 @@ repositories {
     maven {
         url "https://software.mobile.pendo.io/artifactory/androidx-release"
     }
-//        url "https://software.mobile.pendo.io/artifactory/android-release"
-//    }
+    maven {
+        url "https://software.mobile.pendo.io/artifactory/android-release"
+    }
     mavenCentral()
 }
 
@@ -62,7 +63,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation platform('com.google.firebase:firebase-bom:28.2.0')
     implementation 'com.google.firebase:firebase-analytics-ktx'
-    //PENDO Implementation (update/deprecate SDK versions here)
-    implementation group:'sdk.pendo.io' , name:'pendoIO', version:'2.12.+', changing:true
-//    implementation group:'sdk.pendo.io' , name:'pendoIO', version:'2.13.+', changing:true
+    //PENDO SDK VERSION (update/deprecate SDK versions here)//
+    implementation group:'sdk.pendo.io' , name:'pendoIO', version:'2.13.+', changing:true
 }

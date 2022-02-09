@@ -10,7 +10,9 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androidtestapp.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
-import sdk.pendo.io.Pendo
+import sdk.pendo.io.*;
+
+
 
 
 class LoginActivity : AppCompatActivity() {
@@ -31,20 +33,10 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // !!DEPRECATED PENDO 2.9 and older method!! //
-        //PENDO AppKey init
-//        val pendoAppKey =
-//            "eyJhbGciOiJSUzI1NiIsImtpZCI6IiIsInR5cCI6IkpXVCJ9.eyJkYXRhY2VudGVyIjoidXMiLCJrZXkiOiJkNGYxMGE3NDI2ZjU2MTZjOGIwOTc2NmNlYjRmOGI5YzkzZTQyOTY2NWRjYjhlNjA2MmRmODJmNjQ3NDBkZTIxM2ZiZmQxMzQ3NjljNjZhYzA2YTljNmMxZTlkYTQ5MGVjMWQ4M2YwY2FjMDY5YWRiNDNiZWRiNjM3NDY3ZjEwMzRiNDYzZGEzMGU1YzJmOWJjYjYyMTU1MjFjMzYxOWQ5LjQ4M2ViYTg5MGU1ZjFlZjVkNzMxYzE5ZTQyMDAyNDRmLmYzM2U5OWYwYzc0OGI4OTQzNmIzODhmNjBmMDE2NTZmNDJhZDQ0MWJmZWNlNmI0MDRhOTJiNTg1NmNiOTczOTQifQ.DnsjIMt-MNCrC0LIIhKOehbJnd5Ik9LyvUgOSncIRjsNvH0N1ZIJgVKUFSj26vFuyshgy_lmV2N8dGrfnQ9JnUdFKaeZ7Y-ETy__s-HoCH6FHMAe1mBxj868aeUexGA7hRViZlt0l27J9HOkFYWDzH-KPVF83cRFXmxAIc0BOAk"
-//        Pendo.initSdkWithoutVisitor(
-//            this,
-//            pendoAppKey,
-//            null
-//        )
-
-        // PENDO 2.10+ methods //
-        //PENDO APPKEY INIT STATEMENT//
+// !!PENDO 2.10+ METHODS!! //
+        //PENDO API KEY//
         val pendoAppKey =
-            "eyJhbGciOiJSUzI1NiIsImtpZCI6IiIsInR5cCI6IkpXVCJ9.eyJkYXRhY2VudGVyIjoidXMiLCJrZXkiOiI5MzkzNDhiNzJmYjA0NmNlODI0MGNmOWNkZjY2NGE2MjhiMGQ2ZTNmYTgzNzU0OTMwYWUyYTIzOGE1YWNkYWQ0MjNjOTlmZDMwMzViYzEwNTEzN2M5YjlhNjA4NTY3YTk0YWE0OGY3YmRmM2ZlYzNlNjZlNDU3M2FhYjM1ZTUyMGYwZmVkY2I5MGY3ODc3ZjZhOWRhMDlkNmRmM2VmZGNkLjZlZjZmZjhiNTJiYTEwMzg3OWNjMGZjNzQyZWM5NzA2LmY1ZWIyNGE5YjI3Y2Q2NzA2ZmUyM2I5ZWE1NmM4ZjZhMmM0ZjlmYTRmMWYxMGJkM2IxODEyMTljMDQ2YjIyYmIifQ.bY25BZiv3oJr_CxnFQmWAHYz8P1IaDTupWDVxbFR37mSPHxvDHkrAIOmJPFE9pOnve7LljHxBKnrGff2737Z7_5ilPuLrMLzvIE47wwW3SMM0CyNrBBO11lebipEqE_TYr2VExZoH1ro1brldcm6-uuRSXGOPEIM6AZSB3qohEY"
+            "{API KEY GOES HERE}"
 
         Pendo.setup(
             application,
@@ -52,7 +44,18 @@ class LoginActivity : AppCompatActivity() {
             null,
             null
         )
-        // PENDO 2.10+ methods //
+// !!PENDO 2.10+ METHODS!! //
+
+// !!!WARNING DEPRECATED PENDO 2.9 AND OLDER METHODS!!! //
+//        //PENDO AppKey init
+//        val pendoAppKey =
+//            "{APP KEY GOES HERE}"
+//        Pendo.initSdkWithoutVisitor(
+//            this,
+//            pendoAppKey,
+//            null
+//        )
+// !!!WARNING DEPRECATED PENDO 2.9 AND OLDER METHODS!!! //
 
         //configure actionbar
         actionBar = supportActionBar!!

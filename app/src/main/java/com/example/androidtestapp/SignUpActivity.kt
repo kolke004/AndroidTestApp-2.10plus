@@ -32,7 +32,6 @@ class SignUpActivity : AppCompatActivity() {
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         //configure action bar, enable back button
         actionBar = supportActionBar!!
         actionBar.title = "Sign Up"

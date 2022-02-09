@@ -23,22 +23,16 @@
             </intent-filter>
         </activity>
 
-        //PENDO Test Device Connectivity//
+        //PENDO Test Device Connectivity
         <activity android:name="sdk.pendo.io.activities.PendoGateActivity" android:launchMode="singleInstance">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:scheme="pendo-e11f1b96"/>
+                <data android:scheme="{SCHEME-ID GOES HERE}"/>
             </intent-filter>
         </activity>
-        //PENDO Test Device Connectivity//
-
-        //PENDO Debug lines//
-        <meta-data android:name="insert_debug_logging" android:value="true" />
-        <meta-data android:name="pnd_debug_logging" android:value="true" /> // logs for debugging
-        <meta-data android:name="pnd_jsonpath_log" android:value="true" /> // logs for guides
-        //PENDO Debug lines//
+        //PENDO Test Device Connectivity
 
     </application>
 
